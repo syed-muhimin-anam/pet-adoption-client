@@ -18,7 +18,6 @@ const Register = () => {
 
 
 
-    // const onSubmit = data => {
     //     createUser(data.email, data.password)
     //         .then(result => {
     //             const saveUser = {
@@ -28,7 +27,7 @@ const Register = () => {
     //                 role: 'user'
     //             };
 
-    //             fetch('http://localhost:5000/users', {
+    //             fetch('https://medi-care-cerver.vercel.app/users', {
     //                 method: 'POST',
     //                 headers: { 'Content-Type': 'application/json' },
     //                 body: JSON.stringify(saveUser)
@@ -80,7 +79,7 @@ const Register = () => {
                     role: 'user',
                 };
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://medi-care-cerver.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

@@ -104,7 +104,7 @@ const MyPets = () => {
         if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/pets/${pet._id}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/pets/${pet._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ const MyPets = () => {
                     `Pet marked as ${newStatus ? 'adopted' : 'not adopted'}!`,
                     'success'
                 );
-                await refetch(); // Refresh data after update
+                await refetch(); 
             } else {
                 Swal.fire(
                     'Failed!',
@@ -148,14 +148,14 @@ const MyPets = () => {
         if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/pets/${pet._id}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/pets/${pet._id}`, {
                 method: 'DELETE',
             });
 
             const data = await res.json();
             if (data.deletedCount > 0) {
                 Swal.fire('Deleted!', `"${pet.name}" has been deleted.`, 'success');
-                await refetch(); // Refresh list after deletion
+                await refetch(); 
             } else {
                 Swal.fire('Failed!', 'Could not delete the pet. Try again.', 'error');
             }

@@ -20,7 +20,6 @@ const categoryOptions = [
     { value: 'Guinea Pigs', label: 'Guinea Pigs' },
 ];
 
-// All your imports stay the same...
 
 const EditMyPets = () => {
   const { user } = useContext(AuthContext);
@@ -57,7 +56,7 @@ const EditMyPets = () => {
         formData
       );
       setPublicId(res.data.public_id);
-      setValue('image', res.data.secure_url); // Store the image URL
+      setValue('image', res.data.secure_url); 
       clearErrors('image');
     } catch (err) {
       setError('image', {
@@ -83,7 +82,7 @@ const EditMyPets = () => {
       image: imageUrl,
     };
 
-    // Check if user changed anything
+    
     const noChanges =
       updatedPet.name === petDetail.name &&
       updatedPet.age === petDetail.age &&
@@ -103,7 +102,7 @@ const EditMyPets = () => {
 
     try {
       const response = await axios.patch(
-        `http://localhost:5000/pets/${petDetail._id}`,
+        `https://medi-care-cerver.vercel.app/pets/${petDetail._id}`,
         updatedPet
       );
 

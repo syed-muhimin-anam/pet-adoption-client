@@ -20,20 +20,7 @@ const Dashboard = () => {
     console.log(isAdmin);
     
 
-    // useEffect(() => {
-    //     const checkUserRole = async () => {
-    //         if (user?.email) {
-    //             try {
-    //                 const res = await fetch(`http://localhost:5000/users/email?email=${user.email}`);
-    //                 const data = await res.json();
-    //                 setIsAdmin(data?.role === 'Admin');
-    //             } catch (err) {
-    //                 console.error('Error fetching user role:', err);
-    //             }
-    //         }
-    //     };
-    //     checkUserRole();
-    // }, [user]);
+ 
 
 
      useEffect(() => {
@@ -98,7 +85,7 @@ const Dashboard = () => {
                 </ul>
             </div>
 
-            {/* Main Content */}
+          
             <div className="flex-1 md:p-6 md:ml-64 lg:bg-[#FFF7EC]  lg:min-h-screen transition-all duration-300">
                 <Outlet />
             </div>

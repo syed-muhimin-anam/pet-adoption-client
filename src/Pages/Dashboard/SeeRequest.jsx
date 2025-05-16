@@ -7,13 +7,13 @@ const SeeRequest = () => {
     const [request, setRequest] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/adoption/${petDetail._id}`)
+        fetch(`https://medi-care-cerver.vercel.app/adoption/${petDetail._id}`)
             .then(res => res.json())
             .then(data => setRequest(data));
     }, [petDetail._id]);
 
     const handleAccept = (id) => {
-        fetch(`http://localhost:5000/adoption/${id}`, {
+        fetch(`https://medi-care-cerver.vercel.app/adoption/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: 'accepted' }),

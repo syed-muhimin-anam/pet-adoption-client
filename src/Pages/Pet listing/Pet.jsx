@@ -11,7 +11,7 @@ const Pet = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/pets')
+    fetch('https://medi-care-cerver.vercel.app/pets')
       .then(res => res.json())
       .then(data => {
         console.log('Fetched data:', data);

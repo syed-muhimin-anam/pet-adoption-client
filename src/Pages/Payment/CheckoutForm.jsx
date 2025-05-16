@@ -9,7 +9,7 @@ const CheckoutForm = ({ amount, donationDetail }) => {
     const elements = useElements();
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
-    const [confirmed, setConfirmed] = useState(false); // new state
+    const [confirmed, setConfirmed] = useState(false); 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const CheckoutForm = ({ amount, donationDetail }) => {
         if (!amount) return;
 
         try {
-            const res = await fetch('http://localhost:5000/create-payment-intent', {
+            const res = await fetch('https://medi-care-cerver.vercel.app/create-payment-intent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ price: parseFloat(amount) }),
@@ -105,9 +105,9 @@ const CheckoutForm = ({ amount, donationDetail }) => {
             const donationToAdd = paymentDetails.donationAmount;
 
             console.log(donationDetail);
-            // Send payment data to server
+            
             try {
-                const res = await fetch('http://localhost:5000/payments', {
+                const res = await fetch('https://medi-care-cerver.vercel.app/payments', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(paymentDetails),
@@ -118,16 +118,16 @@ const CheckoutForm = ({ amount, donationDetail }) => {
                 if (data.insertedId) {
                     console.log('Donation recorded successfully:', data);
 
-                    // PATCH: Update donated amount in the campaign
+        
                     try {
-                        // ✅ Correct endpoint
-                        const res = await fetch(`http://localhost:5000/donation-campaigns/${donationDetail._id}`, {
+                
+                        const res = await fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${donationDetail._id}`, {
                             method: 'PATCH',
                             headers: {
                                 'Content-Type': 'application/json',
                             },
                             body: JSON.stringify({
-                                donatedAmount: donationToAdd, // amount to add to current total
+                                donatedAmount: donationToAdd, 
                             }),
                         });
 
@@ -147,28 +147,7 @@ const CheckoutForm = ({ amount, donationDetail }) => {
                     console.error('Failed to save payment:', data);
 
 
-                    // PATCH: Update donated amount in the campaign
-                    // try {
-                    //     const res = await fetch(`http://localhost:5000/donation-campaigns/${donationDetail._id}`, {
-                    //         method: 'PATCH',
-                    //         headers: {
-                    //             'Content-Type': 'application/json',
-                    //         },
-                    //         body: JSON.stringify({
-                    //             donatedAmount: Number(donationDetail.donatedAmount + paymentDetails.donationAmount)
-                    //         }),
-                    //     });
-
-                    //     const result = await res.json();
-                    //     if (result.modifiedCount > 0) {
-                    //         console.log('Campaign updated with donation amount.');
-                    //     } else {
-                    //         console.warn('No campaign update occurred.');
-                    //     }
-                    // } catch (patchError) {
-                    //     console.error('Error updating campaign donation amount:', patchError);
-                    // }
-
+               
 
                 }
 

@@ -4,8 +4,7 @@ import {
     getCoreRowModel,
     flexRender,
 } from '@tanstack/react-table';
-// import { FaEdit, FaTrash } from 'react-icons/fa';
-// import useCampain from '../../Hooks/useCampain';
+
 import { FaEdit, FaPause, FaPlay, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
@@ -20,11 +19,7 @@ const AllDonations = () => {
     const { logout } = useContext(AuthContext);
 
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/donation-campaigns')
-    //         .then(res => res.json())
-    //         .then(data => setCampaign(data));
-    // }, []);
+
 
 
 
@@ -70,7 +65,7 @@ const AllDonations = () => {
             accessorKey: 'donatedAmount',
             cell: ({ row }) => {
                 const collected = row.original.donatedAmount || 0;
-                const max = row.original.maxAmount || 1; // avoid divide by 0
+                const max = row.original.maxAmount || 1; 
                 const percent = Math.min((collected / max) * 100, 100);
 
                 return (
@@ -95,7 +90,7 @@ const AllDonations = () => {
                     <Link to={`/dashboard/editCampaign/${row.original._id}`}>
                         <button
                             className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
-                        // onClick={() => handleUpdate(row.original)}
+                        
                         >
                             <FaEdit></FaEdit>
                         </button>
@@ -155,7 +150,7 @@ const AllDonations = () => {
 
         if (confirmResult.isConfirmed) {
             try {
-                const res = await fetch(`http://localhost:5000/donation-campaigns/${campaign._id}`, {
+                const res = await fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${campaign._id}`, {
                     method: 'DELETE'
                 });
 
@@ -184,7 +179,7 @@ const AllDonations = () => {
     // Accept request handler
     const handleActivate = async (campaignItem) => {
         try {
-            const res = await fetch(`http://localhost:5000/donation-campaigns/${campaignItem._id}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${campaignItem._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ const Help = () => {
 
     useEffect(() => {
         const fetchCampaigns = async () => {
-            const res = await fetch('http://localhost:5000/donation-home?_sort=date&_order=desc&_limit=4');
+            const res = await fetch('https://medi-care-cerver.vercel.app/donation-home?_sort=date&_order=desc&_limit=4');
             const data = await res.json();
             setCampaigns(data);
         };

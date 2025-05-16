@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import useAxiosSecure from '../../../Hooks/useAxiosSecure';
-import { AuthContext } from '../../../providers/AuthProvider';
 
 const AllPets = () => {
     const [pets, setPet] = useState([]);
@@ -11,30 +9,11 @@ const AllPets = () => {
     // const [pets] = usePet()
 
     useEffect(() => {
-        fetch('http://localhost:5000/pets')
+        fetch('https://medi-care-cerver.vercel.app/pets')
             .then(res => res.json())
             .then(data => setPet(data));
     }, []);
     console.log(pets.length);
-
-    // const axiosSecure = useAxiosSecure();
-    // const navigate = useNavigate();
-    // const { logout } = useContext(AuthContext);
-
-    // // Fetch users
-    // useEffect(() => {
-    //     axiosSecure.get('/pets')
-    //         .then(res => setPet(res.data))
-    //         .catch(async err => {
-    //             const status = err.response?.status;
-    //             if (status === 401 || status === 403) {
-    //                 await logout();
-    //                 navigate('/login');
-    //             } else {
-    //                 console.error(err);
-    //             }
-    //         });
-    // }, [axiosSecure, logout, navigate]);
 
 
     const handleDelete = async (pet) => {
@@ -51,7 +30,7 @@ const AllPets = () => {
         if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/pets/${pet._id}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/pets/${pet._id}`, {
                 method: 'DELETE',
             });
 
@@ -86,7 +65,7 @@ const AllPets = () => {
         if (!result.isConfirmed) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/pets/${pet._id}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/pets/${pet._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

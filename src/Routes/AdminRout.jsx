@@ -14,7 +14,7 @@
 //     const checkAdminRole = async () => {
 //       if (user?.email) {
 //         try {
-//           const res = await fetch(`http://localhost:5000/users/email?email=${user.email}`);
+//           const res = await fetch(`https://medi-care-cerver.vercel.app/users/email?email=${user.email}`);
 //           const data = await res.json();
 //           if (data?.role === 'Admin') {
 //             setIsAdmin(true);

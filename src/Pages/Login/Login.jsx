@@ -25,11 +25,11 @@ const Login = () => {
                 };
 
                 try {
-                    // Check if user already exists
-                    const response = await axios.get(`http://localhost:5000/users/${user.email}`);
+                    
+                    const response = await axios.get(`https://medi-care-cerver.vercel.app/users/${user.email}`);
                     if (!response.data) {
-                        // If user doesn't exist, add to DB
-                        await axios.post('http://localhost:5000/users', userInfo);
+                       
+                        await axios.post('https://medi-care-cerver.vercel.app/users', userInfo);
                     }
                 } catch (error) {
                     console.error('Error checking or saving user:', error);
@@ -71,7 +71,7 @@ const Login = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-[#22b7cd] px-4">
             <div className="bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row w-full max-w-5xl overflow-hidden">
-                {/* Left Side Content */}
+                {/* left Side Content */}
                 <div className="lg:w-1/2 p-10 flex flex-col justify-center bg-[#e0f7fb]">
                     <h2 className="text-4xl font-bold text-[#075e69]">Welcome Back!</h2>
                     <p className="mt-4 text-gray-700">
@@ -84,7 +84,7 @@ const Login = () => {
                     />
                 </div>
 
-                {/* Right Side Form */}
+                {/* right Side Form */}
                 <div className="lg:w-1/2 p-8">
                     <h3 className="text-3xl font-semibold text-[#075e69] mb-6 text-center">Login to your account</h3>
                     <form onSubmit={handleLogin} className="space-y-4">

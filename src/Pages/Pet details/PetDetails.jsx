@@ -38,7 +38,7 @@ const PetDetails = () => {
     };
 console.log(adoptionData);
 
-        fetch('http://localhost:5000/adoptions', {
+        fetch('https://medi-care-cerver.vercel.app/adoptions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(adoptionData)

@@ -44,7 +44,7 @@ const MyCampaigns = () => {
             accessorKey: 'donatedAmount',
             cell: ({ row }) => {
                 const collected = row.original.donatedAmount || 0;
-                const max = row.original.maxAmount || 1; // avoid divide by 0
+                const max = row.original.maxAmount || 1; 
                 const percent = Math.min((collected / max) * 100, 100);
 
                 return (
@@ -120,7 +120,7 @@ const MyCampaigns = () => {
         }
 
         try {
-            const res = await fetch(`http://localhost:5000/payment-info/${campaign._id}`);
+            const res = await fetch(`https://medi-care-cerver.vercel.app/payment-info/${campaign._id}`);
             const data = await res.json();
 
             if (!Array.isArray(data) || data.length === 0) {
@@ -158,7 +158,7 @@ const MyCampaigns = () => {
     // Accept request handler
     const handleActivate = async (campaignItem) => {
         try {
-            const res = await fetch(`http://localhost:5000/donation-campaigns/${campaignItem._id}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${campaignItem._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ const MyCampaigns = () => {
 
             if (data.modifiedCount > 0) {
                 Swal.fire('Success!', `Campaign has been ${!campaignItem.activate ? 'activated' : 'paused'}`, 'success');
-                refetch(); // refresh campaign list after update
+                refetch(); 
             } else {
                 Swal.fire('No changes made', '', 'info');
             }

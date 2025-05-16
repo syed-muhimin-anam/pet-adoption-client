@@ -6,7 +6,7 @@ const CategorySection = () => {
     // const [availeble, setAvaileble] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://medi-care-cerver.vercel.app/category')
             .then(res => res.json())
             .then(data => setCategories(data));
     }, []);

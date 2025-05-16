@@ -7,7 +7,7 @@ const MyDonations = () => {
 
     const handleRefund = async (petId, refundAmount, donationId) => {
         try {
-            const res = await fetch(`http://localhost:5000/donation-campaigns/${petId}`, {
+            const res = await fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${petId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ const MyDonations = () => {
             const data = await res.json();
 
             if (data.modifiedCount > 0) {
-                const deleteRes = await fetch(`http://localhost:5000/my-donation/${donationId}`, {
+                const deleteRes = await fetch(`https://medi-care-cerver.vercel.app/my-donation/${donationId}`, {
                     method: 'DELETE'
                 });
 

@@ -35,7 +35,7 @@ const DonationDetails = () => {
 
         <button
           onClick={() => setShowModal(true)}
-          disabled={!activate} // disable if activate is false
+          disabled={!activate} 
           className={`px-6 py-2 rounded transition 
     ${activate
               ? 'bg-[#22b7cd] hover:bg-[#1ca2b5] text-white cursor-pointer'

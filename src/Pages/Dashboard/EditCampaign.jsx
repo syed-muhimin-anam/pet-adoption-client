@@ -104,7 +104,7 @@ const EditCampaign = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:5000/donation-campaigns/${campaignDetail._id}`, updatedCampaign);
+      await axios.patch(`https://medi-care-cerver.vercel.app/donation-campaigns/${campaignDetail._id}`, updatedCampaign);
       Swal.fire({
         icon: 'success',
         title: 'Campaign Updated!',

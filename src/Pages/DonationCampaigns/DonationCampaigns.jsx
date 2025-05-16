@@ -8,7 +8,7 @@ const DonationCampaigns = () => {
   const observer = useRef();
 
   const fetchCampaigns = async () => {
-    const res = await fetch(`http://localhost:5000/donation-campaigns?_sort=date&_order=desc&_page=${page}&_limit=6`);
+    const res = await fetch(`https://medi-care-cerver.vercel.app/donation-campaigns?_sort=date&_order=desc&_page=${page}&_limit=6`);
     const data = await res.json();
     if (data.length === 0) {
       setHasMore(false);

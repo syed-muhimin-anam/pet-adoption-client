@@ -48,7 +48,7 @@ import AllDonations from "../Pages/Dashboard/Admin/AllDonations";
         path: '/pet/category/:categoryName',
         element: <PrivateRoute><PetCategory></PetCategory></PrivateRoute> ,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/pets/category/${params.categoryName}`)
+          fetch(`https://medi-care-cerver.vercel.app/pets/category/${params.categoryName}`)
       },
         {
           path: '/login',
@@ -61,12 +61,12 @@ import AllDonations from "../Pages/Dashboard/Admin/AllDonations";
       {
         path:"petDetails/:id",
         element: <PetDetails></PetDetails>,
-        loader:({params}) => fetch(`http://localhost:5000/pets/${params.id}`)
+        loader:({params}) => fetch(`https://medi-care-cerver.vercel.app/pets/${params.id}`)
       },
       {
         path:"donation/:id",
         element: <PrivateRoute><DonationDetails></DonationDetails></PrivateRoute> ,
-        loader:({params}) => fetch(`http://localhost:5000/donation-campaigns/${params.id}`)
+        loader:({params}) => fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${params.id}`)
       },
       ]
     },
@@ -75,7 +75,7 @@ import AllDonations from "../Pages/Dashboard/Admin/AllDonations";
       element:<Dashboard></Dashboard>,
       children: [
          {
-              index: true, // Default route when only "/dashboard" is visited
+              index: true, 
               element: <Navigate to="addPet" />
             },
          {
@@ -106,18 +106,18 @@ import AllDonations from "../Pages/Dashboard/Admin/AllDonations";
         {
         path:"request/:_id",
         element: <SeeRequest></SeeRequest>,
-        loader:({params}) => fetch(`http://localhost:5000/pets/${params._id}`)
+        loader:({params}) => fetch(`https://medi-care-cerver.vercel.app/pets/${params._id}`)
       },
 
        {
         path:"edit/:id",
         element: <EditMyPets></EditMyPets>,
-        loader:({params}) => fetch(`http://localhost:5000/pets/${params.id}`)
+        loader:({params}) => fetch(`https://medi-care-cerver.vercel.app/pets/${params.id}`)
       },
        {
         path:"editCampaign/:id",
         element: <EditCampaign></EditCampaign>,
-        loader:({params}) => fetch(`http://localhost:5000/donation-campaigns/${params.id}`)
+        loader:({params}) => fetch(`https://medi-care-cerver.vercel.app/donation-campaigns/${params.id}`)
       },
 
       {

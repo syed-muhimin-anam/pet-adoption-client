@@ -50,7 +50,7 @@ const AddPet = () => {
         formData
       );
       setPublicId(res.data.public_id);
-      setValue('image', res.data.secure_url); // Store the image URL
+      setValue('image', res.data.secure_url); 
       clearErrors('image');
     } catch (err) {
       setError('image', {
@@ -85,9 +85,9 @@ const AddPet = () => {
     };
 
     try {
-      await axios.post('http://localhost:5000/pets', petData);
+      await axios.post('https://medi-care-cerver.vercel.app/pets', petData);
 
-      // Show SweetAlert success
+    
       Swal.fire({
         icon: 'success',
         title: 'Pet Added!',
@@ -95,7 +95,7 @@ const AddPet = () => {
         confirmButtonColor: '#3085d6',
       });
 
-      // Reset form and clear image
+    
       reset();
       setPublicId(null);
     } catch (err) {
@@ -111,7 +111,7 @@ const AddPet = () => {
     ? cld.image(publicId)
         .format('auto')
         .quality('auto')
-        .resize(fill().width(150).height(150)) // small preview
+        .resize(fill().width(150).height(150)) 
     : null;
 
   return (
