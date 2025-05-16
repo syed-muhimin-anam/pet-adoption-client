@@ -1,0 +1,68 @@
+[
+    {
+      "id": 1,
+      "image": "https://example.com/images/dogs.jpg",
+      "categoryName": "Dogs",
+      "availability": 24,
+      "description": "Friendly, loyal, and playful companions suitable for families and individuals.",
+      "popularBreeds": ["Labrador Retriever", "German Shepherd", "Golden Retriever"]
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/images/cats.jpg",
+      "categoryName": "Cats",
+      "availability": 18,
+      "description": "Independent and affectionate pets that are perfect for cozy homes.",
+      "popularBreeds": ["Persian", "Maine Coon", "Bengal"]
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/images/rabbits.jpg",
+      "categoryName": "Rabbits",
+      "availability": 10,
+      "description": "Soft, gentle animals ideal for first-time pet owners and kids.",
+      "popularBreeds": ["Mini Rex", "Holland Lop", "Lionhead"]
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/images/birds.jpg",
+      "categoryName": "Birds",
+      "availability": 15,
+      "description": "Colorful and vocal companions, great for lively households.",
+      "popularBreeds": ["Parakeet", "Cockatiel", "Lovebird"]
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/images/fish.jpg",
+      "categoryName": "Fish",
+      "availability": 30,
+      "description": "Calming aquatic pets for peaceful and decorative setups.",
+      "popularBreeds": ["Goldfish", "Betta", "Guppy"]
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/images/hamsters.jpg",
+      "categoryName": "Hamsters",
+      "availability": 12,
+      "description": "Cute and low-maintenance pets loved by children.",
+      "popularBreeds": ["Syrian", "Dwarf Campbell Russian", "Robo"]
+    },
+    {
+        "id": 7,
+        "image": "https://example.com/images/turtles.jpg",
+        "categoryName": "Turtles",
+        "availability": 7,
+        "description": "Peaceful, long-living reptiles that require minimal interaction and provide a calming presence.",
+        "popularBreeds": ["Red-Eared Slider", "Box Turtle", "Painted Turtle"]
+      },
+      {
+        "id": 8,
+        "image": "https://example.com/images/guinea-pigs.jpg",
+        "categoryName": "Guinea Pigs",
+        "availability": 9,
+        "description": "Social and squeaky little companions perfect for cuddling and small spaces.",
+        "popularBreeds": ["American", "Abyssinian", "Peruvian"]
+      }
+      
+  ]
+  
